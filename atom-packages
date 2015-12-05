@@ -23,6 +23,5 @@ gulp-control
 autoclose-html
 
 language-powershell
-language-csharp
 language-cshtml
 omnisharp-atom
