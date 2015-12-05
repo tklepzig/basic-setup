@@ -1,0 +1,8 @@
+"*":
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  tabs:
+    usePreviewTabs: true
