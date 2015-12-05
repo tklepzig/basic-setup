@@ -25,12 +25,12 @@ sudo apt-get -fy install
 
 sudo npm install -g bower gulp-cli ungit live-server nodemon
 
-if [ -f atom-packages ]; then
-    echo "Installing atom packages"
-    apm install --packages-file atom-packages
-fi
-
 if [ -f git-config.sh ]; then
     echo "Configure git environment"
     ./git-config.sh
+fi
+
+if [ -f atom-packages ]; then
+    echo "Installing atom packages"
+    apm install --packages-file atom-packages
 fi
