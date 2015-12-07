@@ -6,6 +6,7 @@ git config --global credential.helper store
 git config --global user.name Thomas
 git config --global user.email Thomas@DevBook
 git config --global push.default simple
+git config --global fetch.prune true
 
 echo "Configuring Aliases..."
 
@@ -24,7 +25,7 @@ git config --global alias.acm "!f() { git add --all && git commit -m \"\$1\"; };
 git config --global alias.acmp "!f() { git add --all && git commit -m \"\$1\" && git push; }; f"
 git config --global alias.c "checkout"
 git config --global alias.b "branch"
-git config --global alias.f "fetch -p"
+git config --global alias.f "fetch"
 git config --global alias.m "merge"
 git config --global alias.mff "merge --ff-only"
 git config --global alias.mt "mergetool"
