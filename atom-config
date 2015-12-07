@@ -1,4 +1,15 @@
 "*":
+  "atom-beautify":
+    analytics: false
+    html_unformatted: [
+      "a"
+      "sub"
+      "sup"
+      "b"
+      "i"
+      "u"
+      "pre"
+    ]
   core:
     themes: [
       "atom-dark-ui"
