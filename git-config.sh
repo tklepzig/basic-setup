@@ -7,6 +7,8 @@ git config --global user.name Thomas
 git config --global user.email Thomas@DevBook
 git config --global push.default simple
 git config --global fetch.prune true
+git config --global diff.tool meld
+git config --global merge.tool meld
 
 echo "Configuring Aliases..."
 
@@ -28,6 +30,7 @@ git config --global alias.b "branch"
 git config --global alias.f "fetch"
 git config --global alias.m "merge"
 git config --global alias.mff "merge --ff-only"
+git config --global alias.mr "merge --no-ff"
 git config --global alias.mt "mergetool"
 git config --global alias.rb "rebase"
 git config --global alias.undo "!f() { git reset --hard \$1 && git clean -df \$1; }; f"
