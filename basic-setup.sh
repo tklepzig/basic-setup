@@ -24,3 +24,15 @@ if [ -f atom-packages ]; then
     echo "Installing atom packages"
     apm install --packages-file atom-packages
 fi
+
+echo "Do you wish to install multimedia stuff?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
+sudo apt-get -y install winff easytag audacity gimp vlc
+
+exit
