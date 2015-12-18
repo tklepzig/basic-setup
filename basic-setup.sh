@@ -2,7 +2,7 @@
 
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
-sudo apt-get -y install joe vim git meld npm nodejs-legacy
+sudo apt-get -y install joe vim git meld npm nodejs-legacy unity-tweak-tool
 sudo npm install -g bower gulp-cli ungit live-server nodemon
 
 if [ -f git-config.sh ]; then
