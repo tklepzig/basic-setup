@@ -22,7 +22,7 @@ done
 
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
-sudo apt-get -y install joe unity-tweak-tool
+sudo apt-get -y install joe unity-tweak-tool xdotool
 
 if [ -f chrome.sh ]; then
     echo "Installing Google Chrome"
