@@ -30,7 +30,7 @@ if [ -f chrome.sh ]; then
 fi
 
 if $install_development; then
-    sudo apt-get -y install vim git git-gui meld npm nodejs-legacy
+    sudo apt-get -y install vim git git-gui meld kdiff3 npm nodejs-legacy
     sudo npm install -g bower gulp-cli ungit live-server nodemon
 
     if [ -f git-config.sh ]; then
