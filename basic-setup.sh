@@ -31,7 +31,7 @@ fi
 
 if $install_development; then
     sudo apt-get -y install vim git git-gui meld kdiff3 npm nodejs-legacy
-    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon
+    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector
 
     if [ -f git-config.sh ]; then
         echo "Configure git environment"
