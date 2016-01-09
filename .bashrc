@@ -3,6 +3,7 @@ alias g='git'
 alias git="LANGUAGE=en_US.UTF-8 git"
 alias gk="LANGUAGE=en_US.UTF-8 gitk --all &"
 alias gg="LANGUAGE=en_US.UTF-8 git gui &"
+alias a="atom ."
 
 #show current branch and possible staged or unstaged changes in bash prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
