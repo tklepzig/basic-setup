@@ -3,8 +3,6 @@
 echo "Configuring general settings…"
 
 git config --global credential.helper store
-git config --global user.name Thomas
-git config --global user.email Thomas@DevBook
 git config --global push.default simple
 git config --global fetch.prune true
 git config --global diff.tool meld
