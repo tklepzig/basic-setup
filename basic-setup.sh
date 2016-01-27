@@ -22,7 +22,7 @@ done
 
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
-sudo apt-get -y install joe unity-tweak-tool xdotool
+sudo apt-get -y install vim joe unity-tweak-tool xdotool
 
 if [ -f chrome.sh ]; then
     echo "Installing Google Chrome"
@@ -30,7 +30,7 @@ if [ -f chrome.sh ]; then
 fi
 
 if $install_development; then
-    sudo apt-get -y install vim git git-gui meld kdiff3 npm nodejs-legacy
+    sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
     sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector
 
     if [ -f git-config.sh ]; then
