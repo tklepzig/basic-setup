@@ -31,6 +31,16 @@ fi
 
 if $install_development; then
     sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
+    
+    #install latest version of git
+    sudo add-apt-repository ppa:git-core/ppa
+    sudo apt-get update
+    sudo apt-get install git
+    
+    #install latest version of node
+    curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    
     sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector
 
     if [ -f git-config.sh ]; then
