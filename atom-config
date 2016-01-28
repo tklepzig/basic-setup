@@ -1,6 +1,8 @@
 "*":
   "atom-beautify":
     analytics: false
+    js_indent_size: 4
+    css_indent_size: 4
     html_unformatted: [
       "a"
       "sub"
@@ -16,5 +18,7 @@
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
+  editor:
+    tabLength: 4
   tabs:
     usePreviewTabs: true
