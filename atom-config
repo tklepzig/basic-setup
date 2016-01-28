@@ -3,6 +3,7 @@
     analytics: false
     js_indent_size: 4
     css_indent_size: 4
+    html_indent_size: 4
     html_unformatted: [
       "a"
       "sub"
