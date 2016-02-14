@@ -23,3 +23,5 @@
     tabLength: 4
   tabs:
     usePreviewTabs: true
+  emmet:
+    formatLineBreaks: false
