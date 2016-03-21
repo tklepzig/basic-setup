@@ -39,8 +39,8 @@ echo "alias gg='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git gui &'" >> ~/.custom-c
 echo "alias a='atom .'" >> ~/.custom-config
 echo "#show current branch and possible staged or unstaged changes in bash prompt" >> ~/.custom-config
 echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.custom-config
-echo "export PS1='\u@\h:\w\[\033[01;32m\]\$(__git_ps1)\[\033[00m\]\\$ '" >> ~/.custom-config
-
+echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\$(__git_ps1)\[\033[00m\]\n\\$ '" >> ~/.custom-config
+echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 
 if [ -f chrome.sh ]; then
     echo "Installing Google Chrome"
