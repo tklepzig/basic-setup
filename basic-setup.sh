@@ -41,6 +41,7 @@ echo "#show current branch and possible staged or unstaged changes in bash promp
 echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.custom-config
 echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\$(__git_ps1)\[\033[00m\]\n\\$ '" >> ~/.custom-config
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
+echo "shopt -s extglob" >> ~/.custom-config
 
 if [ -f chrome.sh ]; then
     echo "Installing Google Chrome"
