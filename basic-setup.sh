@@ -60,7 +60,7 @@ if $install_development; then
     curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
-    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown
+    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha
 
     if [ -f git-config.sh ]; then
         echo "Configure git environment"
