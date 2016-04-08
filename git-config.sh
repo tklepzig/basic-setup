@@ -12,6 +12,7 @@ git config --global core.editor "vim"
 echo "Configuring Aliases..."
 
 git config --global alias.s  "status -s"
+git config --global alias.si  "status -s --ignored"
 git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "diff --word-diff"
