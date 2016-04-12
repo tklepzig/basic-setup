@@ -7,6 +7,9 @@ git config --global push.default simple
 git config --global fetch.prune true
 git config --global diff.tool meld
 git config --global merge.tool kdiff3
+git config --global merge.kdiff3.keepBackup false
+git config --global merge.kdiff3.trustExitCode false
+git config --global merge.kdiff3.keepTemporaries false
 git config --global core.editor "vim"
 
 echo "Configuring Aliases..."
