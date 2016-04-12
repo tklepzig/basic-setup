@@ -26,6 +26,12 @@ sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted
 
 
 echo "Configuring .bashrc"
+
+if [ ! -f ~/.bashrc ]
+then
+    touch ~/.bashrc
+fi
+
 if ! grep -q "~/.custom-config" ~/.bashrc
 then
     echo "if [ -f ~/.custom-config ]; then . ~/.custom-config; fi" >> ~/.bashrc;
