@@ -5,12 +5,15 @@ echo "Configuring general settings…"
 git config --global credential.helper store
 git config --global push.default simple
 git config --global fetch.prune true
+git config --global pull.rebase true
 git config --global diff.tool meld
 git config --global merge.tool kdiff3
+git config --global mergetool.keepBackup false
 git config --global merge.kdiff3.keepBackup false
 git config --global merge.kdiff3.trustExitCode false
 git config --global merge.kdiff3.keepTemporaries false
 git config --global core.editor "vim"
+
 
 echo "Configuring Aliases..."
 
@@ -39,6 +42,7 @@ git config --global alias.mff "merge --ff-only"
 git config --global alias.mr "merge --no-ff"
 git config --global alias.mt "mergetool"
 git config --global alias.rb "rebase"
+git config --global alias.rbc "git rebase --continue"
 git config --global alias.undo "!f() { git reset --hard \$1 && git clean -df \$1; }; f"
 
 echo "Done."
