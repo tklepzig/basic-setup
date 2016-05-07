@@ -1,19 +1,67 @@
 "*":
   "atom-beautify":
-    analytics: false
-    js_indent_size: 4
-    css_indent_size: 4
-    html_indent_size: 4
-    html_unformatted: [
-      "a"
-      "sub"
-      "sup"
-      "b"
-      "i"
-      "u"
-      "pre"
-    ]
-    css_newline_between_rules: true
+    apex: {}
+    arduino: {}
+    c: {}
+    cfml: {}
+    coffeescript: {}
+    cpp: {}
+    cs: {}
+    css:
+      newline_between_rules: true
+    d: {}
+    ejs: {}
+    erb: {}
+    fortran: {}
+    general:
+      analytics: false
+    gherkin: {}
+    handlebars: {}
+    html:
+      indent_scripts: "keep"
+      unformatted: [
+        "a"
+        "sub"
+        "sup"
+        "b"
+        "i"
+        "u"
+        "pre"
+      ]
+      wrap_line_length: 120
+    jade: {}
+    java: {}
+    js: {}
+    json: {}
+    jsx: {}
+    latex: {}
+    less: {}
+    marko: {}
+    mustache: {}
+    objectivec: {}
+    pawn: {}
+    perl: {}
+    php: {}
+    python: {}
+    riot: {}
+    ruby: {}
+    rust: {}
+    sass: {}
+    scss:
+      newline_between_rules: true
+    spacebars: {}
+    sql: {}
+    svg: {}
+    swig: {}
+    tss: {}
+    twig: {}
+    typescript: {}
+    vala: {}
+    visualforce: {}
+    xml: {}
+    xtemplate: {}
+  "autocomplete-plus":
+    defaultProvider: "Fuzzy"
   core:
     themes: [
       "atom-dark-ui"
@@ -25,3 +73,5 @@
     usePreviewTabs: true
   emmet:
     formatLineBreaks: false
+  "tree-view":
+    autoReveal: true
