@@ -6,4 +6,4 @@ code --install-extension anseki.vscode-color
 code --install-extension robertohuertasm.vscode-icons
 code --install-extension donjayamanne.githistory
 code --install-extension xabikos.ReactSnippets
-code --install-extension aeschli.vscode-css-formatter
+code --install-extension maptz.camelcasenavigation
