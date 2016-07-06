@@ -46,5 +46,7 @@ git config --global alias.rb "rebase"
 git config --global alias.rbc "git rebase --continue"
 git config --global alias.undo "!f() { git reset --hard \$1 && git clean -df \$1; }; f"
 git config --global alias.dummy "commit --allow-empty -m 'dummy commit, contains no change'"
+git config --global alias.sw "show --word-diff --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\""
+git config --global alias.swn "show --word-diff --name-status --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\""
 
 echo "Done."
