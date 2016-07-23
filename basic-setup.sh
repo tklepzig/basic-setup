@@ -1,5 +1,7 @@
 #!/bin/bash
 
+setupcon
+
 install_development=false;
 install_multimedia=false;
 
