@@ -25,7 +25,7 @@ select yn in "Yes" "No"; do
 done
 
 
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
 sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs
 
@@ -63,7 +63,7 @@ if $install_development; then
     sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
 
     #install latest version of git
-    sudo add-apt-repository ppa:git-core/ppa
+    sudo add-apt-repository -y ppa:git-core/ppa
     sudo apt-get update
     sudo apt-get -y install git
     
