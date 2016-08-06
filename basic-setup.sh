@@ -5,6 +5,9 @@ setupcon
 install_development=false;
 install_multimedia=false;
 
+accent='\033[4;1;1;33m'
+normal='\033[0m'
+
 echo "Do you wish to install development stuff?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -27,7 +30,7 @@ sudo apt-get -y update
 sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs
 
 
-echo "Configuring .bashrc"
+echo -e "${accent}Configuring .bashrc${normal}"
 
 if [ ! -f ~/.bashrc ]
 then
@@ -52,7 +55,7 @@ echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 
 if [ -f chrome.sh ]; then
-    echo "Installing Google Chrome"
+    echo -e "${accent}Installing Google Chrome${normal}"
     ./chrome.sh
 fi
 
@@ -62,26 +65,22 @@ if $install_development; then
     #install latest version of git
     sudo add-apt-repository ppa:git-core/ppa
     sudo apt-get update
-    sudo apt-get install git
-
-    #install latest version of node
-    curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-
+    sudo apt-get -y install git
+    
     sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha azure-cli
 
     if [ -f git-config.sh ]; then
-        echo "Configure git environment"
+        echo -e "${accent}Configure git environment${normal}"
         ./git-config.sh
     fi
 
     if [ -f atom.sh ]; then
-        echo "Installing Atom"
+        echo -e "${accent}Installing Atom${normal}"
         ./atom.sh
     fi
 
     if [ -f atom-packages ]; then
-        echo "Installing atom packages"
+        echo -e "${accent}Installing atom packages${normal}"
         apm install --packages-file atom-packages
     fi
 fi
