@@ -31,7 +31,7 @@ git config --global alias.ln "-c core.pager='less -SRF' log --graph --all --form
 git config --global alias.ld "-c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\" --date-order"
 git config --global alias.r "reset"
 git config --global alias.rh "reset --hard"
-git config --global alias.a "add --all"
+git config --global alias.a "!f() { git add \"./*\$1*\"; }; f"
 git config --global alias.ap "add --patch"
 git config --global alias.cm "commit -m"
 git config --global alias.cma "commit --amend"
