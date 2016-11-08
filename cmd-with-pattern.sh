@@ -1,5 +1,4 @@
-function cmdWithPattern()
-{
+
     cmd=$1
     pattern=""
     args=""
@@ -15,4 +14,4 @@ function cmdWithPattern()
     done
 
     $cmd $args $pattern    
-}
+
