@@ -11,8 +11,6 @@ echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\
 echo "done" >> ~/git-log.sh
 echo "$logCommon \$args \$pattern" >> ~/git-log.sh
 
-#__git_complete "g l" _git_log
-
 echo "Configuring general settings..."
 
 git config --global credential.helper store
@@ -31,13 +29,7 @@ git config --global core.editor "vim"
 echo "Configuring Aliases..."
 
 git config --global alias.s  "status -sb"
-alias gs="git s"
-#__git_complete "g l" _git_log
-
 git config --global alias.si  "status -sb --ignored"
-alias gs="git s"
-#__git_complete "g l" _git_status
-
 git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "!f() { git diff --word-diff \"./*\$1*\"; }; f"

@@ -54,9 +54,9 @@ echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\$(__git_ps1)\[\033[00m\]
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
-#echo "__git_complete g _git" >> ~/.custom-config
 echo ". /usr/share/bash-completion/completions/git" >> ~/.custom-config
 echo "__git_complete g __git_main" >> ~/.custom-config
+echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
 
 if [ -f chrome.sh ]; then
     echo -e "${accent}Installing Google Chrome${normal}"
