@@ -1,6 +1,19 @@
 #!/bin/bash
 
-echo "Configuring general settings…"
+logCommon="git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
+
+echo "Creating scripts..."
+
+echo "git-log.sh"
+echo "pattern=\"\"; args=\"\"" > ~/git-log.sh
+echo "for var in \"\$@\"; do" >> ~/git-log.sh
+echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\"" >> ~/git-log.sh
+echo "done" >> ~/git-log.sh
+echo "$logCommon \$args \$pattern" >> ~/git-log.sh
+
+#__git_complete "g l" _git_log
+
+echo "Configuring general settings..."
 
 git config --global credential.helper store
 git config --global push.default simple
@@ -18,17 +31,22 @@ git config --global core.editor "vim"
 echo "Configuring Aliases..."
 
 git config --global alias.s  "status -sb"
+alias gs="git s"
+#__git_complete "g l" _git_log
+
 git config --global alias.si  "status -sb --ignored"
+alias gs="git s"
+#__git_complete "g l" _git_status
+
 git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "!f() { git diff --word-diff \"./*\$1*\"; }; f"
 git config --global alias.ds "!f() { git diff --staged --word-diff \"./*\$1*\"; }; f"
 git config --global alias.l-old "log --graph --all --format=\"%C(cyan)%ar by %an:%Creset %s%n%C(yellow)%h %C(auto)%d%Creset%n\""
-git config --global alias.l "!f() { git -c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\"; }; f"
-git config --global alias.ls "!f() { git -c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\" -10; }; f"
-git config --global alias.lm "!f() { git -c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\" --merges; }; f"
-git config --global alias.ln "!f() { git -c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\" --name-status; }; f"
-git config --global alias.ld "!f() { git -c core.pager='less -SRF' log --graph --all --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\" --date-order; }; f"
+git config --global alias.l "!bash ~/git-log.sh"
+git config --global alias.lm "!bash ~/git-log.sh --merges"
+git config --global alias.ln "!bash ~/git-log.sh --name-status"
+git config --global alias.ld "!bash ~/git-log.sh --date-order"
 git config --global alias.r "reset"
 git config --global alias.rh "reset --hard"
 git config --global alias.a "!f() { git add \"./*\$1*\"; }; f"
