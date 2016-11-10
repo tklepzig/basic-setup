@@ -35,6 +35,7 @@ then
     echo "alias g='git'" >> ~/.custom-config
     echo "alias gk='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 gitk --all &'" >> ~/.custom-config
     echo "alias gg='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git gui &'" >> ~/.custom-config
+    echo "alias gsa='~/git-status-all.sh'" >> ~/.custom-config
     echo "#show current branch and possible staged or unstaged changes in bash prompt" >> ~/.custom-config
     echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.custom-config
     echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\`__git_ps1\`\[\033[00m\]\n\\$ '" >> ~/.custom-config
@@ -77,6 +78,11 @@ echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/search-files.sh
 echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/search-files.sh
 echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/search-files.sh
 
+
+echo "git-status-all.sh"
+echo "#!/bin/bash" > ~/git-status-all.sh
+echo "dir=\${1-.}" >> ~/git-status-all.sh
+echo "find \$dir -maxdepth 1 -mindepth 1 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv && echo && echo)" >> ~/git-status-all.sh
 
 
 echo -e "${accent}Configuring general git settings...${normal}"
