@@ -1,17 +1,85 @@
 #!/bin/bash
 
-logCommon="git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
+accent='\033[1;33m'
+normal='\033[0m'
 
-echo "Creating scripts..."
+isProgramInstalled()
+{
+    command -v $1 >/dev/null 2>&1 || { return 1 >&2; }
+    return 0
+}
+
+echo -e "${accent}Configuring .bashrc...${normal}"
+
+if [ ! -f ~/.bashrc ]
+then
+    touch ~/.bashrc
+fi
+
+if ! grep -q "~/.custom-config" ~/.bashrc
+then
+    echo "if [ -f ~/.custom-config ]; then . ~/.custom-config; fi" >> ~/.bashrc;
+fi
+rm -f ~/.custom-config
+
+#bash general
+echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd; }; __mkcd'" >> ~/.custom-config
+echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
+echo "shopt -s extglob" >> ~/.custom-config
+echo "shopt -s globstar" >> ~/.custom-config
+echo "alias f='~/f.sh'" >> ~/.custom-config
+
+if isProgramInstalled git
+then
+    echo "alias git='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git'" >> ~/.custom-config
+    echo "alias g='git'" >> ~/.custom-config
+    echo "alias gk='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 gitk --all &'" >> ~/.custom-config
+    echo "alias gg='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git gui &'" >> ~/.custom-config
+    echo "#show current branch and possible staged or unstaged changes in bash prompt" >> ~/.custom-config
+    echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.custom-config
+    echo "export PS1=\"\[\033[0;32m\]\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\$(__git_ps1)\[\033[00m\]\n\\$ \"" >> ~/.custom-config
+    echo "#for windows: maybe it is necessary to replace __git_ps1 with the following: __git_ps1 ' (%s)' (but only if some errors occurs...)" >> ~/.custom-config
+
+    if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        echo ". /usr/share/bash-completion/completions/git" >> ~/.custom-config
+    fi
+
+    echo "__git_complete g __git_main" >> ~/.custom-config
+    echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
+fi
+
+if isProgramInstalled atom
+then
+    echo "alias a='atom .'" >> ~/.custom-config
+fi
+
+if isProgramInstalled code
+then
+echo "alias c='code .'" >> ~/.custom-config
+fi
+
+
+echo -e "${accent}Creating scripts...${normal}"
 
 echo "git-log.sh"
-echo "pattern=\"\"; args=\"\"" > ~/git-log.sh
+echo "#!/bin/bash" > ~/git-log.sh
+echo "pattern=\"\"; args=\"\"" >> ~/git-log.sh
 echo "for var in \"\$@\"; do" >> ~/git-log.sh
 echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\"" >> ~/git-log.sh
 echo "done" >> ~/git-log.sh
-echo "$logCommon \$args \$pattern" >> ~/git-log.sh
+echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset' \$args \$pattern" >> ~/git-log.sh
 
-echo "Configuring general settings..."
+
+echo "f.sh"
+echo "#!/bin/bash" > ~/f.sh
+echo "pattern=\"*\"" >> ~/f.sh
+echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/f.sh
+echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/f.sh
+echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/f.sh
+
+
+
+echo -e "${accent}Configuring general git settings...${normal}"
 
 git config --global credential.helper store
 git config --global push.default simple
@@ -26,7 +94,7 @@ git config --global merge.kdiff3.keepTemporaries false
 git config --global core.editor "vim"
 
 
-echo "Configuring Aliases..."
+echo -e "${accent}Configuring git aliases...${normal}"
 
 git config --global alias.s  "status -sb"
 git config --global alias.si  "status -sb --ignored"
@@ -67,4 +135,4 @@ git config --global alias.swn "show --word-diff --name-status --format=\"%C(yell
 git config --global alias.st "stash"
 git config --global alias.stp "stash pop"
 
-echo "Done."
+echo -e "${accent}Done.${normal}"
