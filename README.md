@@ -1,6 +1,6 @@
 # basic-setup
 Some scripts and files for my basic setup of a development environment.
 
-##### Update git config:
+##### Update bash and git config:
 
-    curl -Ls https://git.io/bs-git|bash
+    curl -Ls https://git.io/bg|bash
