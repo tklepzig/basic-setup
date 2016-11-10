@@ -27,7 +27,7 @@ echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
-echo "alias f='~/f.sh'" >> ~/.custom-config
+echo "alias sf='~/search-files.sh'" >> ~/.custom-config
 
 if isProgramInstalled git
 then
@@ -70,12 +70,12 @@ echo "done" >> ~/git-log.sh
 echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset' \$args \$pattern" >> ~/git-log.sh
 
 
-echo "f.sh"
-echo "#!/bin/bash" > ~/f.sh
-echo "pattern=\"*\"" >> ~/f.sh
-echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/f.sh
-echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/f.sh
-echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/f.sh
+echo "search-files.sh"
+echo "#!/bin/bash" > ~/search-files.sh
+echo "pattern=\"*\"" >> ~/search-files.sh
+echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/search-files.sh
+echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/search-files.sh
+echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/search-files.sh
 
 
 
