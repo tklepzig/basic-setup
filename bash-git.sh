@@ -82,7 +82,7 @@ echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\
 echo "git-status-all.sh"
 echo "#!/bin/bash" > ~/git-status-all.sh
 echo "dir=\${1-.}" >> ~/git-status-all.sh
-echo "find \$dir -maxdepth 1 -mindepth 1 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv && echo && echo)" >> ~/git-status-all.sh
+echo "find \$dir -maxdepth 1 -mindepth 1 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv && echo && echo)\" \\;" >> ~/git-status-all.sh
 
 
 echo -e "${accent}Configuring general git settings...${normal}"
