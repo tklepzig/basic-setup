@@ -62,7 +62,7 @@ fi
 
 echo -e "${accent}Creating scripts...${normal}"
 
-echo "git-log.sh"
+echo "   git-log.sh"
 echo "#!/bin/bash" > ~/git-log.sh
 echo "pattern=\"\"; args=\"\"" >> ~/git-log.sh
 echo "for var in \"\$@\"; do" >> ~/git-log.sh
@@ -71,7 +71,7 @@ echo "done" >> ~/git-log.sh
 echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset' \$args \$pattern" >> ~/git-log.sh
 
 
-echo "search-files.sh"
+echo "   search-files.sh"
 echo "#!/bin/bash" > ~/search-files.sh
 echo "pattern=\"*\"" >> ~/search-files.sh
 echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/search-files.sh
@@ -79,7 +79,7 @@ echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory
 echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/search-files.sh
 
 
-echo "git-status-all.sh"
+echo "   git-status-all.sh"
 echo "#!/bin/bash" > ~/git-status-all.sh
 echo "dir=\${1-.}" >> ~/git-status-all.sh
 echo "find \$dir -maxdepth 1 -mindepth 1 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv && echo && echo)\" \\;" >> ~/git-status-all.sh
