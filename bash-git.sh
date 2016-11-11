@@ -3,6 +3,17 @@
 accent='\033[1;33m'
 normal='\033[0m'
 
+isOS()
+{
+    shopt -s nocasematch
+    if [[ "$OSTYPE" == *"$1"* ]]
+    then
+        return 0;
+    fi
+
+    return 1;
+}
+
 isProgramInstalled()
 {
     command -v $1 >/dev/null 2>&1 || { return 1 >&2; }
@@ -29,6 +40,11 @@ echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
 echo "alias sf='~/search-files.sh'" >> ~/.custom-config
 
+if [ isOS("msys") ]
+then
+    echo "alias e='explorer .'" >> ~/.custom-config
+fi
+
 if isProgramInstalled git
 then
     echo "alias git='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git'" >> ~/.custom-config
@@ -41,7 +57,8 @@ then
     echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\`__git_ps1\`\[\033[00m\]\n\\$ '" >> ~/.custom-config
     echo "#for windows: maybe it is necessary to replace __git_ps1 with the following: __git_ps1 ' (%s)' (but only if some errors occurs...)" >> ~/.custom-config
 
-    if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    if [ isOS("linux") ]
+    then
         echo ". /usr/share/bash-completion/completions/git" >> ~/.custom-config
     fi
 
