@@ -40,7 +40,7 @@ echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
 echo "alias sf='~/search-files.sh'" >> ~/.custom-config
 
-if [ isOS("msys") ]
+if isOS msys
 then
     echo "alias e='explorer .'" >> ~/.custom-config
 fi
@@ -57,7 +57,7 @@ then
     echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\`__git_ps1\`\[\033[00m\]\n\\$ '" >> ~/.custom-config
     echo "#for windows: maybe it is necessary to replace __git_ps1 with the following: __git_ps1 ' (%s)' (but only if some errors occurs...)" >> ~/.custom-config
 
-    if [ isOS("linux") ]
+    if isOS linux
     then
         echo ". /usr/share/bash-completion/completions/git" >> ~/.custom-config
     fi
