@@ -44,14 +44,14 @@ if $install_development; then
     
     sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc    
 
-    if [ -f atom.sh ]; then
+    if [ -f atom/atom.sh ]; then
         echo -e "${accent}Installing Atom${normal}"
-        ./atom.sh
+        atom/atom.sh
     fi
 
-    if [ -f atom-packages ]; then
+    if [ -f atom/atom-packages ]; then
         echo -e "${accent}Installing atom packages${normal}"
-        apm install --packages-file atom-packages
+        apm install --packages-file atom/atom-packages
     fi
 fi
 
