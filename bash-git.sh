@@ -91,7 +91,7 @@ echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(r
 echo "   search-files.sh"
 echo "#!/bin/bash" > ~/search-files.sh
 echo "pattern=\"*\"" >> ~/search-files.sh
-echo "[ ! -z \$2 ] && pattern=\"\$2\"" >> ~/search-files.sh
+echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/search-files.sh
 echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/search-files.sh
 echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/search-files.sh
 
