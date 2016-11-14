@@ -93,7 +93,7 @@ echo "#!/bin/bash" > ~/search-files.sh
 echo "pattern=\"*\"" >> ~/search-files.sh
 echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/search-files.sh
 echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/search-files.sh
-echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\" \"{}\"" >> ~/search-files.sh
+echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/search-files.sh
 
 
 echo "   git-status-all.sh"
