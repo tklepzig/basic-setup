@@ -99,7 +99,7 @@ echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H \"\$1\
 echo "   git-status-all.sh"
 echo "#!/bin/bash" > ~/git-status-all.sh
 echo "dir=\${1-.}" >> ~/git-status-all.sh
-echo "find \$dir -maxdepth 1 -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv && echo && echo)\" \\;" >> ~/git-status-all.sh
+echo "find \$dir -maxdepth 1 -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv --color && echo && echo)\" \\; | less -R" >> ~/git-status-all.sh
 
 
 echo -e "${accent}Configuring general git settings...${normal}"
@@ -115,7 +115,7 @@ git config --global merge.kdiff3.keepBackup false
 git config --global merge.kdiff3.trustExitCode false
 git config --global merge.kdiff3.keepTemporaries false
 git config --global core.editor "vim"
-
+git config --global color.status always
 
 echo -e "${accent}Configuring git aliases...${normal}"
 
