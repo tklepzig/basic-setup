@@ -38,7 +38,7 @@ echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
-echo "alias sf='~/search-files.sh'" >> ~/.custom-config
+echo "alias sf='~/.search-files.sh'" >> ~/.custom-config
 
 if isOS msys
 then
@@ -52,7 +52,7 @@ then
     echo "alias g='git'" >> ~/.custom-config
     echo "alias gk='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 gitk --all &'" >> ~/.custom-config
     echo "alias gg='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git gui &'" >> ~/.custom-config
-    echo "alias gsa='~/git-status-all.sh'" >> ~/.custom-config
+    echo "alias gsa='~/.git-status-all.sh'" >> ~/.custom-config
     echo "#show current branch and possible staged or unstaged changes in bash prompt" >> ~/.custom-config
     echo "export GIT_PS1_SHOWDIRTYSTATE=1" >> ~/.custom-config
     echo "export PS1='\u@\h:\[\033[0;33m\]\w\[\033[01;32m\]\`__git_ps1\`\[\033[00m\]\n\\$ '" >> ~/.custom-config
@@ -91,27 +91,27 @@ fi
 
 echo -e "${accent}Creating scripts...${normal}"
 
-echo "   git-log.sh"
-echo "#!/bin/bash" > ~/git-log.sh
-echo "pattern=\"\"; args=\"\"" >> ~/git-log.sh
-echo "for var in \"\$@\"; do" >> ~/git-log.sh
-echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\"" >> ~/git-log.sh
-echo "done" >> ~/git-log.sh
-echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset' \$args \$pattern" >> ~/git-log.sh
+echo "   .git-log.sh"
+echo "#!/bin/bash" > ~/.git-log.sh
+echo "pattern=\"\"; args=\"\"" >> ~/.git-log.sh
+echo "for var in \"\$@\"; do" >> ~/.git-log.sh
+echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\"" >> ~/.git-log.sh
+echo "done" >> ~/.git-log.sh
+echo "git -c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset' \$args \$pattern" >> ~/.git-log.sh
 
 
-echo "   search-files.sh"
-echo "#!/bin/bash" > ~/search-files.sh
-echo "pattern=\"*\"" >> ~/search-files.sh
-echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/search-files.sh
-echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/search-files.sh
-echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/search-files.sh
+echo "   .search-files.sh"
+echo "#!/bin/bash" > ~/.search-files.sh
+echo "pattern=\"*\"" >> ~/.search-files.sh
+echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/.search-files.sh
+echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/.search-files.sh
+echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/.search-files.sh
 
 
-echo "   git-status-all.sh"
-echo "#!/bin/bash" > ~/git-status-all.sh
-echo "dir=\${1-.}" >> ~/git-status-all.sh
-echo "find \$dir -maxdepth 1 -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv --color && echo && echo)\" \\; | less -R" >> ~/git-status-all.sh
+echo "   .git-status-all.sh"
+echo "#!/bin/bash" > ~/.git-status-all.sh
+echo "dir=\${1-.}" >> ~/.git-status-all.sh
+echo "find \$dir -maxdepth 1 -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv --color && echo && echo)\" \\; | less -R" >> ~/.git-status-all.sh
 
 
 echo -e "${accent}Configuring general git settings...${normal}"
@@ -137,10 +137,10 @@ git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "!f() { git diff --word-diff \"./*\$1*\"; }; f"
 git config --global alias.ds "!f() { git diff --staged --word-diff \"./*\$1*\"; }; f"
-git config --global alias.l "!bash ~/git-log.sh"
-git config --global alias.lm "!bash ~/git-log.sh --merges"
-git config --global alias.ln "!bash ~/git-log.sh --name-status"
-git config --global alias.ld "!bash ~/git-log.sh --date-order"
+git config --global alias.l "!bash ~/.git-log.sh"
+git config --global alias.lm "!bash ~/.git-log.sh --merges"
+git config --global alias.ln "!bash ~/.git-log.sh --name-status"
+git config --global alias.ld "!bash ~/.git-log.sh --date-order"
 git config --global alias.r "!f() { git reset -- \"./*\$1*\"; }; f"
 git config --global alias.rh "reset --hard"
 git config --global alias.rs "reset --soft"
