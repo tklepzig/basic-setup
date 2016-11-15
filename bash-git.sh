@@ -69,7 +69,13 @@ fi
 
 if isProgramInstalled atom
 then
-    echo "alias a='atom .'" >> ~/.custom-config
+    if isOS linux
+    then        
+        echo "alias a='atom .'" >> ~/.custom-config
+    else
+        echo "alias atom='atom .'" >> ~/.custom-config
+    fi
+    
 fi
 
 if isProgramInstalled code
