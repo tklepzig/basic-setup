@@ -74,7 +74,12 @@ fi
 
 if isProgramInstalled code
 then
-echo "alias c='code .'" >> ~/.custom-config
+    if isOS linux
+    then        
+        echo "alias c='code .'" >> ~/.custom-config
+    else
+        echo "alias code='code .'" >> ~/.custom-config
+    fi
 fi
 
 
