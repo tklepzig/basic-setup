@@ -43,6 +43,7 @@ echo "alias sf='~/search-files.sh'" >> ~/.custom-config
 if isOS msys
 then
     echo "alias e='explorer .'" >> ~/.custom-config
+    echo "echo -ne \"\\e]4;4;#007fff\\a\"" >> ~/.custom-config
 fi
 
 if isProgramInstalled git
