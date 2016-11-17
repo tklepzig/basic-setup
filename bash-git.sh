@@ -64,9 +64,61 @@ then
     fi
 
     echo "__git_complete g __git_main" >> ~/.custom-config
+
+    echo "__git_complete \"g s\" _git_status" >> ~/.custom-config
+    echo "__git_complete \"g si\" _git_status" >> ~/.custom-config
+
+    echo "__git_complete \"g dt\" _git_difftool" >> ~/.custom-config
+    echo "__git_complete \"g dts\" _git_difftool" >> ~/.custom-config
+
+    echo "__git_complete \"g d\" _git_diff" >> ~/.custom-config
+    echo "__git_complete \"g ds\" _git_diff" >> ~/.custom-config
+
     echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g lm\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g ln\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g ld\" _git_log" >> ~/.custom-config
+
+    echo "__git_complete \"g r\" _git_reset" >> ~/.custom-config
+    echo "__git_complete \"g rh\" _git_reset" >> ~/.custom-config
+    echo "__git_complete \"g rs\" _git_reset" >> ~/.custom-config
+
+    echo "__git_complete \"g a\" _git_add" >> ~/.custom-config
+    echo "__git_complete \"g ap\" _git_add" >> ~/.custom-config
+
+    echo "__git_complete \"g cm\" _git_commit" >> ~/.custom-config
+    echo "__git_complete \"g cma\" _git_commit" >> ~/.custom-config
+
     echo "__git_complete \"g p\" _git_push" >> ~/.custom-config
+    echo "__git_complete \"g pt\" _git_push" >> ~/.custom-config
+
+    echo "__git_complete \"g c\" _git_checkout" >> ~/.custom-config
+
+    echo "__git_complete \"g b\" _git_branch" >> ~/.custom-config
+    echo "__git_complete \"g bd\" _git_branch" >> ~/.custom-config
+    echo "__git_complete \"g ba\" _git_branch" >> ~/.custom-config
+    echo "__git_complete \"g bnm\" _git_branch" >> ~/.custom-config
+
+    echo "__git_complete \"g f\" _git_fetch" >> ~/.custom-config
+
+    echo "__git_complete \"g m\" _git_merge" >> ~/.custom-config
+    echo "__git_complete \"g ma\" _git_merge" >> ~/.custom-config
+    echo "__git_complete \"g mff\" _git_merge" >> ~/.custom-config
+    echo "__git_complete \"g mr\" _git_merge" >> ~/.custom-config
+
+    echo "__git_complete \"g mt\" _git_mergetool" >> ~/.custom-config
+
+    echo "__git_complete \"g rb\" _git_rebase" >> ~/.custom-config
+    echo "__git_complete \"g rbc\" _git_rebase" >> ~/.custom-config
+    echo "__git_complete \"g rba\" _git_rebase" >> ~/.custom-config
+
+    echo "__git_complete \"g sw\" _git_show" >> ~/.custom-config
+    echo "__git_complete \"g swn\" _git_show" >> ~/.custom-config
+
+    echo "__git_complete \"g st\" _git_stash" >> ~/.custom-config
+    echo "__git_complete \"g stp\" _git_stash" >> ~/.custom-config
 fi
+
 
 if isProgramInstalled atom
 then
