@@ -65,6 +65,7 @@ then
 
     echo "__git_complete g __git_main" >> ~/.custom-config
     echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g p\" _git_push" >> ~/.custom-config
 fi
 
 if isProgramInstalled atom
