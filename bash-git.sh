@@ -62,9 +62,7 @@ then
     then
         echo ". /usr/share/bash-completion/completions/git" >> ~/.custom-config
     fi
-
-    echo "__git_complete g __git_main" >> ~/.custom-config
-
+   
     echo "__git_complete \"g s\" _git_status" >> ~/.custom-config
     echo "__git_complete \"g si\" _git_status" >> ~/.custom-config
 
@@ -117,6 +115,8 @@ then
 
     echo "__git_complete \"g st\" _git_stash" >> ~/.custom-config
     echo "__git_complete \"g stp\" _git_stash" >> ~/.custom-config
+    
+    echo "__git_complete g __git_main" >> ~/.custom-config
 fi
 
 
