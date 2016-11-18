@@ -75,6 +75,7 @@ then
     echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g lm\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ln\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g lp\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ld\" _git_log" >> ~/.custom-config
 
     echo "__git_complete \"g r\" _git_reset" >> ~/.custom-config
@@ -167,6 +168,16 @@ echo "dir=\${1-.}" >> ~/.git-status-all.sh
 echo "find \$dir -maxdepth 1 -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv --color && echo && echo)\" \\; | less -R" >> ~/.git-status-all.sh
 
 
+echo "   .git-pattern-generic.sh"
+echo "#!/bin/bash" > ~/.git-pattern-generic.sh
+echo "pattern=\"\"; args=\"\"" >> ~/.git-pattern-generic.sh
+echo "for var in \"\${@:2}\"; do" >> ~/.git-pattern-generic.sh
+echo "[[ \$var == p:* ]] && pattern=\"-- ./*\${var:2}*\" || args=\"\$args \$var\"" >> ~/.git-pattern-generic.sh
+echo "done" >> ~/.git-pattern-generic.sh
+echo "git \$1 \$args \$pattern" >> ~/.git-pattern-generic.sh
+
+
+
 echo -e "${accent}Configuring general git settings...${normal}"
 
 git config --global credential.helper store
@@ -186,19 +197,20 @@ echo -e "${accent}Configuring git aliases...${normal}"
 
 git config --global alias.s  "status -sb"
 git config --global alias.si  "status -sb --ignored"
-git config --global alias.dt "difftool --dir-diff"
-git config --global alias.dts "difftool --dir-diff --staged"
-git config --global alias.d "!f() { git diff --word-diff \"./*\$1*\"; }; f"
-git config --global alias.ds "!f() { git diff --staged --word-diff \"./*\$1*\"; }; f"
+git config --global alias.dt "!bash ~/.git-pattern-generic.sh difftool --dir-diff"
+git config --global alias.dts "!bash ~/.git-pattern-generic.sh difftool --dir-diff --staged"
+git config --global alias.d "!bash ~/.git-pattern-generic.sh diff --word-diff"
+git config --global alias.ds "!bash ~/.git-pattern-generic.sh diff --staged --word-diff"
 git config --global alias.l "!bash ~/.git-log.sh"
 git config --global alias.lm "!bash ~/.git-log.sh --merges"
 git config --global alias.ln "!bash ~/.git-log.sh --name-status"
+git config --global alias.lp "!bash ~/.git-log.sh -p"
 git config --global alias.ld "!bash ~/.git-log.sh --date-order"
-git config --global alias.r "!f() { git reset -- \"./*\$1*\"; }; f"
-git config --global alias.rh "reset --hard"
-git config --global alias.rs "reset --soft"
-git config --global alias.a "!f() { git add \"./*\$1*\"; }; f"
-git config --global alias.ap "!f() { git add --patch \"./*\$1*\"; }; f"
+git config --global alias.r "!bash ~/.git-pattern-generic.sh reset"
+git config --global alias.rh "!bash ~/.git-pattern-generic.sh reset --hard"
+git config --global alias.rs "!bash ~/.git-pattern-generic.sh reset --soft"
+git config --global alias.a "!bash ~/.git-pattern-generic.sh add"
+git config --global alias.ap "!bash ~/.git-pattern-generic.sh add --patch"
 git config --global alias.cm "commit -m"
 git config --global alias.cma "commit --amend"
 git config --global alias.acm "!f() { git add --all && git commit -m \"\$1\"; }; f"
