@@ -42,7 +42,7 @@ if $install_development; then
     sudo apt-get update
     sudo apt-get -y install git
     
-    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc    
+    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc http-server
 
     if [ -f atom/atom.sh ]; then
         echo -e "${accent}Installing Atom${normal}"
