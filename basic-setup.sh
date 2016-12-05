@@ -27,7 +27,7 @@ done
 
 sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
-sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs
+sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs tmux
 
 if [ -f chrome.sh ]; then
     echo -e "${accent}Installing Google Chrome${normal}"
