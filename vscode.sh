@@ -9,5 +9,4 @@ code --install-extension michelemelluso.code-beautifier
 code --install-extension ms-vscode.csharp
 code --install-extension cake-build.cake-vscode
 code --install-extension SirTobi.code-clip-ring
-code --install-extension MattiasPernhult.vscode-todo
 code --install-extension pprice.better-merge
