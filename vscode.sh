@@ -10,3 +10,4 @@ code --install-extension ms-vscode.csharp
 code --install-extension cake-build.cake-vscode
 code --install-extension SirTobi.code-clip-ring
 code --install-extension pprice.better-merge
+code --install-extension minhthai.vscode-todo-parser
