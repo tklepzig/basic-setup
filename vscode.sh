@@ -14,7 +14,7 @@ code --install-extension minhthai.vscode-todo-parser
 code --install-extension qinjia.seti-icons
 
 #Typescript improvements
-code --install-extension DSKWRK.vscode-generate-getter-setter
+#code --install-extension DSKWRK.vscode-generate-getter-setter
 code --install-extension johnpapa.Angular2
 code --install-extension kisstkondoros.typelens
 code --install-extension rbbit.typescript-hero
