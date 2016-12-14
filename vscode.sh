@@ -18,3 +18,4 @@ code --install-extension qinjia.seti-icons
 code --install-extension johnpapa.Angular2
 code --install-extension kisstkondoros.typelens
 code --install-extension rbbit.typescript-hero
+code --install-extension krizzdewizz.refactorix
