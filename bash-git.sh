@@ -38,7 +38,7 @@ echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
-echo "alias sf='~/.search-files.sh'" >> ~/.custom-config
+echo "alias sif='~/.search-in-files.sh'" >> ~/.custom-config
 
 if isOS msys
 then
@@ -145,12 +145,12 @@ fi
 
 echo -e "${accent}Creating scripts...${normal}"
 
-echo "   .search-files.sh"
-echo "#!/bin/bash" > ~/.search-files.sh
-echo "pattern=\"*\"" >> ~/.search-files.sh
-echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/.search-files.sh
-echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/.search-files.sh
-echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/.search-files.sh
+echo "   .search-in-files.sh"
+echo "#!/bin/bash" > ~/.search-in-files.sh
+echo "pattern=\"*\"" >> ~/.search-in-files.sh
+echo "[[ ! -z \$2 ]] && pattern=\"\$2\"" >> ~/.search-in-files.sh
+echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory matching files ${accent}\\\"\$pattern\\\"${normal}\"" >> ~/.search-in-files.sh
+echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/.search-in-files.sh
 
 
 echo "   .git-status-all.sh"
