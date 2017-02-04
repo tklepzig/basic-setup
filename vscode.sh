@@ -21,3 +21,6 @@ code --install-extension rbbit.typescript-hero
 #Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
 code --install-extension pmneo.tsimporter
 code --install-extension krizzdewizz.refactorix
+
+code --install-extension eamodio.gitlens
+code --install-extension pflannery.vscode-versionlens
