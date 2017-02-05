@@ -12,16 +12,18 @@ code --install-extension SirTobi.code-clip-ring
 code --install-extension pprice.better-merge
 code --install-extension minhthai.vscode-todo-parser
 code --install-extension qinjia.seti-icons
-
-#Typescript improvements
 code --install-extension johnpapa.Angular2
-code --install-extension kisstkondoros.typelens
+
 #Ein Typescript Import Assistant, der alle Imports einer Datei auf einmal auflösen kann
 code --install-extension rbbit.typescript-hero
 #Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
 code --install-extension pmneo.tsimporter
-code --install-extension krizzdewizz.refactorix
 
+code --install-extension krizzdewizz.refactorix
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension akamud.vscode-javascript-snippet-pack
+
+code --install-extension kisstkondoros.typelens
 code --install-extension eamodio.gitlens
 code --install-extension pflannery.vscode-versionlens
 
