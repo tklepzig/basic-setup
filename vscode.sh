@@ -24,3 +24,14 @@ code --install-extension krizzdewizz.refactorix
 
 code --install-extension eamodio.gitlens
 code --install-extension pflannery.vscode-versionlens
+
+exit
+
+#settings
+{
+    "window.zoomLevel": 1,
+    "editor.fontSize": 14,
+    "typescriptHero.restartDebugger.active": false,
+    "editor.tabCompletion": true,
+    "editor.quickSuggestions": false
+}
