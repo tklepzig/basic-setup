@@ -35,5 +35,6 @@ exit
     "editor.fontSize": 14,
     "typescriptHero.restartDebugger.active": false,
     "editor.tabCompletion": true,
-    "editor.quickSuggestions": false
+    "editor.quickSuggestions": false,
+    "git.autofetch": false
 }
