@@ -39,6 +39,7 @@ echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
 echo "alias sif='~/.search-in-files.sh'" >> ~/.custom-config
+echo "alias update-my-config='curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/bash-git.sh|bash'" >> ~/.custom-config
 
 if isOS msys
 then
@@ -77,6 +78,7 @@ then
     echo "__git_complete \"g ln\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g lp\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ld\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g ls\" _git_log" >> ~/.custom-config
 
     echo "__git_complete \"g r\" _git_reset" >> ~/.custom-config
     echo "__git_complete \"g rh\" _git_reset" >> ~/.custom-config
