@@ -1,7 +1,7 @@
 #!/bin/bash
 
 code --install-extension christian-kohler.path-intellisense
-code --install-extension anseki.vscode-color
+#code --install-extension anseki.vscode-color
 code --install-extension donjayamanne.githistory
 code --install-extension maptz.camelcasenavigation
 code --install-extension mrmlnc.vscode-scss
@@ -26,6 +26,10 @@ code --install-extension akamud.vscode-javascript-snippet-pack
 code --install-extension kisstkondoros.typelens
 code --install-extension eamodio.gitlens
 code --install-extension pflannery.vscode-versionlens
+
+
+code --install-extension dzannotti.vscode-babel-coloring
+code --install-extension jeremyrajan.react-component
 
 exit
 
