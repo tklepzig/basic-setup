@@ -47,6 +47,12 @@ then
     echo "echo -ne \"\\e]4;4;#007fff\\a\"" >> ~/.custom-config
 fi
 
+if isOS linux
+then
+    echo "alias n='nautilus .'" >> ~/.custom-config
+fi
+
+
 if isProgramInstalled git
 then
     echo "alias git='LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 git'" >> ~/.custom-config
