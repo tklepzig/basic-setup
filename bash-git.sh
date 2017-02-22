@@ -45,6 +45,7 @@ if isOS msys
 then
     echo "alias e='explorer .'" >> ~/.custom-config
     echo "echo -ne \"\\e]4;4;#007fff\\a\"" >> ~/.custom-config
+    echo "set completion-ignore-case off" > ~/.inputrc
 fi
 
 if isOS linux
