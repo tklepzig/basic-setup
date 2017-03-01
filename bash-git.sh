@@ -151,7 +151,6 @@ then
     fi
 fi
 
-
 echo -e "${accent}Creating scripts...${normal}"
 
 echo "   .search-in-files.sh"
@@ -166,6 +165,16 @@ echo "   .git-status-all.sh"
 echo "#!/bin/bash" > ~/.git-status-all.sh
 echo "maxdepth=\${1-1}" >> ~/.git-status-all.sh
 echo "find . -maxdepth \$maxdepth -mindepth 0 -type d -exec sh -c \"test -d \\\"{}/.git\\\" && (echo \\\"--------------------------------\\\" && echo \\\"{}\\\" && cd \\\"{}\\\" && git status -sb && echo && echo \\\"Branches:\\\" && git branch -vv --color && echo && echo)\" \\; | less -R" >> ~/.git-status-all.sh
+
+
+echo "   .git-fetch-merge-other.sh"
+echo "#!/bin/bash" > ~/.git-fetch-merge-other.sh
+echo "for branch in \$(git for-each-ref --format='%(refname)' refs/heads/); do" >> ~/.git-fetch-merge-other.sh
+echo "if [ \$(git symbolic-ref HEAD) != \$branch ]" >> ~/.git-fetch-merge-other.sh
+echo "then" >> ~/.git-fetch-merge-other.sh
+echo "git fetch origin +\$branch:\$branch" >> ~/.git-fetch-merge-other.sh
+echo "fi" >> ~/.git-fetch-merge-other.sh
+echo "done" >> ~/.git-fetch-merge-other.sh
 
 
 echo -e "${accent}Configuring general git settings...${normal}"
@@ -217,6 +226,7 @@ git config --global alias.ba "branch -a"
 git config --global alias.bnm "branch --no-merged"
 git config --global alias.bv "branch -vv"
 git config --global alias.f "fetch"
+git config --global alias.fmo "!f() { . ~/.git-fetch-merge-other.sh; }; f"
 git config --global alias.m "merge"
 git config --global alias.ma "merge --abort"
 git config --global alias.mff "merge --ff-only"
