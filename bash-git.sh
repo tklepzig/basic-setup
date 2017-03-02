@@ -81,6 +81,7 @@ then
     echo "__git_complete \"g ds\" _git_diff" >> ~/.custom-config
 
     echo "__git_complete \"g l\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g ll\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g lm\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ln\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g lp\" _git_log" >> ~/.custom-config
