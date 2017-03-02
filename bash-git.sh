@@ -98,7 +98,7 @@ then
     echo "__git_complete \"g cma\" _git_commit" >> ~/.custom-config
 
     echo "__git_complete \"g p\" _git_push" >> ~/.custom-config
-    echo "__git_complete \"g pt\" _git_push" >> ~/.custom-config
+    #echo "__git_complete \"g pt\" _git_push" >> ~/.custom-config
 
     echo "__git_complete \"g c\" _git_checkout" >> ~/.custom-config
 
@@ -126,6 +126,10 @@ then
     echo "__git_complete \"g st\" _git_stash" >> ~/.custom-config
     echo "__git_complete \"g stp\" _git_stash" >> ~/.custom-config
     
+    echo "__git_complete \"g t\" _git_tag" >> ~/.custom-config
+    echo "__git_complete \"g td\" _git_tag" >> ~/.custom-config
+    echo "__git_complete \"g tl\" _git_tag" >> ~/.custom-config
+
     echo "__git_complete g __git_main" >> ~/.custom-config
 fi
 
@@ -202,7 +206,8 @@ git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "diff --word-diff"
 git config --global alias.ds "diff --staged --word-diff"
-git config --global alias.l "$logCommon"
+git config --global alias.l "$logCommon -10"
+git config --global alias.ll "$logCommon"
 git config --global alias.lm "$logCommon --merges"
 git config --global alias.ln "$logCommon --name-status"
 git config --global alias.lp "$logCommon -p"
@@ -216,9 +221,9 @@ git config --global alias.ap "add --patch"
 git config --global alias.cm "commit -m"
 git config --global alias.cma "commit --amend"
 git config --global alias.acm "!f() { git add --all && git commit -m \"\$1\"; }; f"
-git config --global alias.acmp "!f() { git add --all && git commit -m \"\$1\" && git push; }; f"
-git config --global alias.p "push"
-git config --global alias.pt "push --tags"
+git config --global alias.acmp "!f() { git add --all && git commit -m \"\$1\" && git push --follow-tags; }; f"
+git config --global alias.p "push --follow-tags"
+#git config --global alias.pt "push --tags"
 git config --global alias.c "checkout"
 git config --global alias.b "branch"
 git config --global alias.bd "branch -d"
@@ -241,5 +246,10 @@ git config --global alias.sw "show --word-diff --format=\"%C(yellow)%h%C(reset) 
 git config --global alias.swn "show --word-diff --name-status --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\""
 git config --global alias.st "stash"
 git config --global alias.stp "stash pop"
+
+git config --global alias.t "tag"
+git config --global alias.td "tag -d"
+git config --global alias.tl "tag --list"
+git config --global alias.tlr "!f() { git show-ref --tags | sed 's?.*refs/tags/??'; }; f"
 
 echo -e "${accent}Done.${normal}"
