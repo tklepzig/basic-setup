@@ -131,6 +131,10 @@ then
     echo "__git_complete \"g td\" _git_tag" >> ~/.custom-config
     echo "__git_complete \"g tl\" _git_tag" >> ~/.custom-config
 
+    echo "__git_complete \"g wta\" _git_worktree" >> ~/.custom-config
+    echo "__git_complete \"g wtp\" _git_worktree" >> ~/.custom-config
+    echo "__git_complete \"g wtl\" _git_worktree" >> ~/.custom-config
+
     echo "__git_complete g __git_main" >> ~/.custom-config
 fi
 
@@ -255,5 +259,9 @@ git config --global alias.t "tag"
 git config --global alias.td "tag -d"
 git config --global alias.tl "tag --list"
 git config --global alias.tlr "!f() { git show-ref --tags | sed 's?.*refs/tags/??'; }; f"
+
+git config --global alias.wta "worktree add"
+git config --global alias.wtp "worktree prune"
+git config --global alias.wtl "worktree list"
 
 echo -e "${accent}Done.${normal}"
