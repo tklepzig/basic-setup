@@ -36,8 +36,12 @@ select yn in "Yes" "No"; do
 done
 
 
-sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-sudo apt-get -y update
+if isUbuntu
+then
+    sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+    sudo apt-get -y update
+fi
+
 sudo apt-get -y install vim joe xdotool gparted sshfs tmux
 
 if isUbuntu
@@ -51,10 +55,13 @@ curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/chrome.sh
 if $install_development; then
     sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
 
-    #install latest version of git
-    sudo add-apt-repository -y ppa:git-core/ppa
-    sudo apt-get update
-    sudo apt-get -y install git
+    if isUbuntu
+    then
+        #install latest version of git
+        sudo add-apt-repository -y ppa:git-core/ppa
+        sudo apt-get update
+        sudo apt-get -y install git
+    fi
     
     sudo npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli http-server yarn
 fi
