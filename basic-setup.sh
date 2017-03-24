@@ -29,10 +29,8 @@ sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -
 sudo apt-get -y update
 sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs tmux
 
-if [ -f chrome.sh ]; then
-    echo -e "${accent}Installing Google Chrome${normal}"
-    ./chrome.sh
-fi
+echo -e "${accent}Installing Google Chrome${normal}"
+curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/chrome.sh | bash
 
 if $install_development; then
     sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
@@ -42,26 +40,14 @@ if $install_development; then
     sudo apt-get update
     sudo apt-get -y install git
     
-    sudo npm install -g bower gulp-cli grunt-cli ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc http-server
-
-    if [ -f atom/atom.sh ]; then
-        echo -e "${accent}Installing Atom${normal}"
-        atom/atom.sh
-    fi
-
-    if [ -f atom/atom-packages ]; then
-        echo -e "${accent}Installing atom packages${normal}"
-        apm install --packages-file atom/atom-packages
-    fi
+    sudo npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc http-server yarn
 fi
 
 if $install_multimedia; then
     sudo apt-get -y install winff easytag audacity gimp vlc
 fi
 
-if [ -f bash-git.sh ]; then
-    echo -e "${accent}Configure bash and git${normal}"
-    ./bash-git.sh
-fi
+echo -e "${accent}Configure bash and git${normal}"
+curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/bash-git.sh | bash
 
 exit
