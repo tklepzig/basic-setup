@@ -8,6 +8,17 @@ install_multimedia=false;
 accent='\033[4;1;1;33m'
 normal='\033[0m'
 
+isUbuntu()
+{
+    shopt -s nocasematch
+    if [[ `uname -v` == *"ubuntu"* ]]
+    then
+        return 0;
+    fi
+
+    return 1;
+}
+
 echo "Do you wish to install development stuff?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -27,7 +38,12 @@ done
 
 sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 sudo apt-get -y update
-sudo apt-get -y install vim joe unity-tweak-tool xdotool gparted sshfs tmux
+sudo apt-get -y install vim joe xdotool gparted sshfs tmux
+
+if isUbuntu
+then
+    sudo apt-get -y install unity-tweak-tool
+fi
 
 echo -e "${accent}Installing Google Chrome${normal}"
 curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/chrome.sh | bash
