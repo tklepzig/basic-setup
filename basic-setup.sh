@@ -40,7 +40,7 @@ if $install_development; then
     sudo apt-get update
     sudo apt-get -y install git
     
-    sudo npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli qckwinsvc http-server yarn
+    sudo npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli http-server yarn
 fi
 
 if $install_multimedia; then

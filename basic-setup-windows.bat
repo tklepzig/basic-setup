@@ -7,4 +7,4 @@ echo Installing choco packages
 choco install -y atom googlechrome audacity git meld nodejs winff gimp vlc mp3tag
 
 echo Installing npm packages
-npm install -g bower gulp-cli ungit live-server nodemon
+npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli http-server yarn qckwinsvc
