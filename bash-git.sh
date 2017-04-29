@@ -135,6 +135,9 @@ then
     echo "__git_complete \"g wtp\" _git_worktree" >> ~/.custom-config
     echo "__git_complete \"g wtl\" _git_worktree" >> ~/.custom-config
 
+    echo "__git_complete \"g cp\" _git_cherry_pick" >> ~/.custom-config
+    echo "__git_complete \"g cpn\" _git_cherry_pick" >> ~/.custom-config
+
     echo "__git_complete g __git_main" >> ~/.custom-config
 fi
 
@@ -263,5 +266,8 @@ git config --global alias.tlr "!f() { git show-ref --tags | sed 's?.*refs/tags/?
 git config --global alias.wta "worktree add"
 git config --global alias.wtp "worktree prune"
 git config --global alias.wtl "worktree list"
+
+git config --global alias.cp "cherry-pick"
+git config --global alias.cpn "cherry-pick -n"
 
 echo -e "${accent}Done.${normal}"
