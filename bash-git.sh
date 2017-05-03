@@ -181,6 +181,7 @@ echo "find . -maxdepth \$maxdepth -mindepth 0 -type d -exec sh -c \"test -d \\\"
 
 echo "   .git-fetch-merge.sh"
 echo "#!/bin/bash" > ~/.git-fetch-merge.sh
+echo "git fetch" >> ~/.git-fetch-merge.sh
 echo "currentBranch=\$(git symbolic-ref HEAD)" >> ~/.git-fetch-merge.sh
 echo "for branch in \$(git for-each-ref --format='%(refname)' refs/heads/); do" >> ~/.git-fetch-merge.sh
 echo "if [ \$currentBranch != \$branch ]" >> ~/.git-fetch-merge.sh
