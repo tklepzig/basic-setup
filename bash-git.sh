@@ -155,12 +155,12 @@ fi
 
 if isProgramInstalled code
 then
-    if isOS linux
-    then        
+#    if isOS linux
+#    then        
         echo "alias c='code .'" >> ~/.custom-config
-    else
-        echo "alias code='code .'" >> ~/.custom-config
-    fi
+#    else
+#        echo "alias code='code .'" >> ~/.custom-config
+#    fi
 fi
 
 echo -e "${accent}Creating scripts...${normal}"
