@@ -37,8 +37,8 @@ exit
 {
     "window.zoomLevel": 1,
     "editor.fontSize": 14,
-    "typescriptHero.restartDebugger.active": false,
     "editor.tabCompletion": true,
     "editor.quickSuggestions": false,
-    "git.autofetch": false
+    "git.autofetch": false,
+    "workbench.iconTheme": "seti"
 }
