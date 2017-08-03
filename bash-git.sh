@@ -39,6 +39,7 @@ echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
 echo "alias sif='~/.search-in-files.sh'" >> ~/.custom-config
+echo "alias hgrep='~/.hgrep.sh'" >> ~/.custom-config
 echo "alias update-my-config='curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/bash-git.sh|bash'" >> ~/.custom-config
 
 if isOS msys
