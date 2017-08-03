@@ -173,6 +173,13 @@ echo "echo -e \"Searching for ${accent}\\\"\$1\\\"${normal} in current directory
 echo "find . -type f -name \"\$pattern\" -print0 | xargs -I {} -0 grep -H --color \"\$1\" \"{}\"" >> ~/.search-in-files.sh
 
 
+echo "   .hgrep.sh"
+echo "#!/bin/bash" > ~/.hgrep.sh
+echo "HISTFILE=~/.bash_history" >> ~/.hgrep.sh
+echo "set -o history" >> ~/.hgrep.sh
+echo "history | grep \"\$1\"" >> ~/.hgrep.sh
+
+
 echo "   .git-status-all.sh"
 echo "#!/bin/bash" > ~/.git-status-all.sh
 echo "maxdepth=\${1-1}" >> ~/.git-status-all.sh
