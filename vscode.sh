@@ -40,5 +40,6 @@ exit
     "editor.tabCompletion": true,
     "editor.quickSuggestions": false,
     "git.autofetch": false,
-    "workbench.iconTheme": "seti"
+    "workbench.iconTheme": "seti",
+    "editor.minimap.enabled": false
 }
