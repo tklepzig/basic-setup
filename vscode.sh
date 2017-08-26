@@ -1,36 +1,36 @@
 #!/bin/bash
 
-code --install-extension akamud.vscode-javascript-snippet-pack
-code --install-extension christian-kohler.path-intellisense
-code --install-extension cmstead.jsrefactor
-code --install-extension dbaeumer.vscode-eslint
-#code --install-extension donjayamanne.githistory
-code --install-extension dzannotti.vscode-babel-coloring
-code --install-extension eamodio.gitlens
-code --install-extension jeremyrajan.react-component
-code --install-extension kisstkondoros.typelens
-code --install-extension michelemelluso.code-beautifier
-code --install-extension minhthai.vscode-todo-parser
-code --install-extension mrmlnc.vscode-scss
-code --install-extension pflannery.vscode-versionlens
-code --install-extension qinjia.seti-icons
-#code --install-extension maptz.camelcasenavigation
+code-insiders --install-extension akamud.vscode-javascript-snippet-pack
+code-insiders --install-extension christian-kohler.path-intellisense
+code-insiders --install-extension cmstead.jsrefactor
+code-insiders --install-extension dbaeumer.vscode-eslint
+#code-insiders --install-extension donjayamanne.githistory
+code-insiders --install-extension dzannotti.vscode-babel-coloring
+code-insiders --install-extension eamodio.gitlens
+code-insiders --install-extension jeremyrajan.react-component
+code-insiders --install-extension kisstkondoros.typelens
+code-insiders --install-extension michelemelluso.code-beautifier
+code-insiders --install-extension minhthai.vscode-todo-parser
+code-insiders --install-extension mrmlnc.vscode-scss
+code-insiders --install-extension pflannery.vscode-versionlens
+code-insiders --install-extension qinjia.seti-icons
+#code-insiders --install-extension maptz.camelcasenavigation
 
 # Testing
-code --install-extension nwhatt.chai-snippets
-code --install-extension spoonscen.es6-mocha-snippets
+code-insiders --install-extension nwhatt.chai-snippets
+code-insiders --install-extension spoonscen.es6-mocha-snippets
 
 
 # C#
-#code --install-extension ms-vscode.csharp
-#code --install-extension cake-build.cake-vscode
+#code-insiders --install-extension ms-vscode.csharp
+#code-insiders --install-extension cake-build.cake-vscode
 
 # Angular
-#code --install-extension johnpapa.Angular2
+#code-insiders --install-extension johnpapa.Angular2
 # Ein Typescript Import Assistant, der alle Imports einer Datei auf einmal auflösen kann
-#code --install-extension rbbit.typescript-hero
+#code-insiders --install-extension rbbit.typescript-hero
 # Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
-#code --install-extension pmneo.tsimporter
+#code-insiders --install-extension pmneo.tsimporter
 
 exit
 
