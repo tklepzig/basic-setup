@@ -154,11 +154,11 @@ then
     
 fi
 
-if isProgramInstalled code
+if isProgramInstalled code-insiders
 then
 #    if isOS linux
 #    then        
-        echo "alias c='code .'" >> ~/.custom-config
+        echo "alias c='code-insiders .'" >> ~/.custom-config
 #    else
 #        echo "alias code='code .'" >> ~/.custom-config
 #    fi
