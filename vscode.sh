@@ -39,8 +39,16 @@ exit
     "window.zoomLevel": 1,
     "editor.fontSize": 14,
     "editor.tabCompletion": true,
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
     "git.autofetch": false,
     "workbench.iconTheme": "seti",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "files.associations": {
+        "*.jsx": "javascriptreact"
+    },
+    "emmet.showExpandedAbbreviation": "always"
 }
