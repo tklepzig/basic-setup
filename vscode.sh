@@ -5,6 +5,7 @@ code-insiders --install-extension christian-kohler.path-intellisense
 code-insiders --install-extension cmstead.jsrefactor
 code-insiders --install-extension dbaeumer.vscode-eslint
 #code-insiders --install-extension donjayamanne.githistory
+code-insiders --install-extension huizhou.githd
 code-insiders --install-extension dzannotti.vscode-babel-coloring
 code-insiders --install-extension eamodio.gitlens
 code-insiders --install-extension jeremyrajan.react-component
@@ -14,7 +15,7 @@ code-insiders --install-extension minhthai.vscode-todo-parser
 code-insiders --install-extension mrmlnc.vscode-scss
 code-insiders --install-extension pflannery.vscode-versionlens
 code-insiders --install-extension qinjia.seti-icons
-#code-insiders --install-extension maptz.camelcasenavigation
+code-insiders --install-extension maptz.camelcasenavigation
 
 # Testing
 code-insiders --install-extension nwhatt.chai-snippets
@@ -34,7 +35,7 @@ code-insiders --install-extension spoonscen.es6-mocha-snippets
 
 exit
 
-#settings
+# settings
 {
     "window.zoomLevel": 1,
     "editor.fontSize": 14,
@@ -52,3 +53,12 @@ exit
     },
     "emmet.showExpandedAbbreviation": "always"
 }
+
+# key bindings
+[
+    {
+        "key": "ctrl+backspace",
+        "command": "extension.deleteCamelLeftCommand",
+        "when": "editorTextFocus"
+    }
+]
