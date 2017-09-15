@@ -34,6 +34,7 @@ code-insiders --install-extension spoonscen.es6-mocha-snippets
 #code-insiders --install-extension pmneo.tsimporter
 # Angular Support in HTML files
 #code-insiders --install-extension Angular.ng-template
+#code-insiders --install-extension eg2.tslint
 
 exit
 
