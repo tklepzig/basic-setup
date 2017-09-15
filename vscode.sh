@@ -32,6 +32,8 @@ code-insiders --install-extension spoonscen.es6-mocha-snippets
 #code-insiders --install-extension rbbit.typescript-hero
 # Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
 #code-insiders --install-extension pmneo.tsimporter
+# Angular Support in HTML files
+#code-insiders --install-extension Angular.ng-template
 
 exit
 
