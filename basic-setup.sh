@@ -42,12 +42,12 @@ then
     sudo apt-get -y update
 fi
 
-sudo apt-get -y install vim joe xdotool gparted sshfs tmux
+sudo apt-get -y install vim xdotool gparted sshfs tmux
 
-if isUbuntu
-then
-    sudo apt-get -y install unity-tweak-tool
-fi
+#if isUbuntu
+#then
+#    sudo apt-get -y install unity-tweak-tool
+#fi
 
 echo -e "${accent}Installing Google Chrome${normal}"
 curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/chrome.sh | bash
@@ -63,7 +63,7 @@ if $install_development; then
         sudo apt-get -y install git
     fi
     
-    sudo npm install -g ungit live-server nodemon node-inspector livedown mocha azure-cli http-server yarn
+    sudo npm install -g ungit yarn
 fi
 
 if $install_multimedia; then
