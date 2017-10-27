@@ -1,5 +1,6 @@
 #!/bin/bash
 
+code-insiders --install-extension WallabyJs.quokka-vscode
 code-insiders --install-extension akamud.vscode-javascript-snippet-pack
 code-insiders --install-extension christian-kohler.path-intellisense
 code-insiders --install-extension cmstead.jsrefactor
