@@ -1,7 +1,8 @@
 #!/bin/bash
 
+code-insiders --install-extension Orta.vscode-jest
 code-insiders --install-extension WallabyJs.quokka-vscode
-code-insiders --install-extensionformulahendry.auto-rename-tag
+code-insiders --install-extension formulahendry.auto-rename-tag
 code-insiders --install-extension akamud.vscode-javascript-snippet-pack
 code-insiders --install-extension christian-kohler.path-intellisense
 #code-insiders --install-extension donjayamanne.githistory
@@ -58,7 +59,8 @@ exit
     "files.associations": {
         "*.jsx": "javascriptreact"
     },
-    "emmet.showExpandedAbbreviation": "always"
+    "emmet.showExpandedAbbreviation": "always",
+    "tsimporter.doubleQuotes": true
 }
 
 # key bindings
