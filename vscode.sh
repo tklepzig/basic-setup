@@ -1,6 +1,5 @@
 #!/bin/bash
 
-code-insiders --install-extension Orta.vscode-jest
 code-insiders --install-extension WallabyJs.quokka-vscode
 code-insiders --install-extension formulahendry.auto-rename-tag
 code-insiders --install-extension akamud.vscode-javascript-snippet-pack
@@ -17,8 +16,9 @@ code-insiders --install-extension qinjia.seti-icons
 code-insiders --install-extension maptz.camelcasenavigation
 
 # Testing
-code-insiders --install-extension nwhatt.chai-snippets
-code-insiders --install-extension spoonscen.es6-mocha-snippets
+#code-insiders --install-extension nwhatt.chai-snippets
+#code-insiders --install-extension spoonscen.es6-mocha-snippets
+code-insiders --install-extension Orta.vscode-jest
 
 # ES 2015, Babel
 code-insiders --install-extension dzannotti.vscode-babel-coloring
