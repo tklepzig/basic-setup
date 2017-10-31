@@ -20,6 +20,7 @@ code-insiders --install-extension maptz.camelcasenavigation
 #code-insiders --install-extension spoonscen.es6-mocha-snippets
 code-insiders --install-extension Orta.vscode-jest
 code-insiders --install-extension andys8.jest-snippets
+code-insiders --install-extension thekarel.open-spec-file
 
 # ES 2015, Babel
 code-insiders --install-extension dzannotti.vscode-babel-coloring
@@ -61,7 +62,13 @@ exit
         "*.jsx": "javascriptreact"
     },
     "emmet.showExpandedAbbreviation": "always",
-    "tsimporter.doubleQuotes": true
+    "tsimporter.doubleQuotes": true,
+    "openSpecFile.suffixMap": {
+        ".js": ".spec.js",
+        ".spec.js": ".js",
+        ".ts": ".spec.ts",
+        ".spec.ts": ".ts"
+    }
 }
 
 # key bindings
