@@ -19,6 +19,7 @@ code-insiders --install-extension maptz.camelcasenavigation
 #code-insiders --install-extension nwhatt.chai-snippets
 #code-insiders --install-extension spoonscen.es6-mocha-snippets
 code-insiders --install-extension Orta.vscode-jest
+code-insiders --install-extension andys8.jest-snippets
 
 # ES 2015, Babel
 code-insiders --install-extension dzannotti.vscode-babel-coloring
