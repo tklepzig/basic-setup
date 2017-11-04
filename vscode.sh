@@ -29,8 +29,8 @@ code-insiders --install-extension cmstead.jsrefactor
 code-insiders --install-extension jeremyrajan.react-component
 
 # Typescript
-code-insiders --install-extension rbbit.typescript-hero # Ein Typescript Import Assistant, der alle Imports einer Datei auf einmal auflösen kann
-code-insiders --install-extension pmneo.tsimporter # Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
+#code-insiders --install-extension rbbit.typescript-hero # Ein Typescript Import Assistant, der alle Imports einer Datei auf einmal auflösen kann
+#code-insiders --install-extension pmneo.tsimporter # Ebenfalls ein Typescript Import Assistant, aber der unterstützt die tsconfig.json
 code-insiders --install-extension eg2.tslint
 code-insiders --install-extension christianoetterli.refactorix
 code-insiders --install-extension infeng.vscode-react-typescript
