@@ -23,10 +23,10 @@ code-insiders --install-extension andys8.jest-snippets
 code-insiders --install-extension thekarel.open-spec-file
 
 # ES 2015, Babel
-code-insiders --install-extension dzannotti.vscode-babel-coloring
-code-insiders --install-extension dbaeumer.vscode-eslint
-code-insiders --install-extension cmstead.jsrefactor
-code-insiders --install-extension jeremyrajan.react-component
+#code-insiders --install-extension dzannotti.vscode-babel-coloring
+#code-insiders --install-extension dbaeumer.vscode-eslint
+#code-insiders --install-extension cmstead.jsrefactor
+#code-insiders --install-extension jeremyrajan.react-component
 
 # Typescript
 #code-insiders --install-extension rbbit.typescript-hero # Ein Typescript Import Assistant, der alle Imports einer Datei auf einmal auflösen kann
@@ -42,6 +42,9 @@ code-insiders --install-extension infeng.vscode-react-typescript
 # C#
 #code-insiders --install-extension ms-vscode.csharp
 #code-insiders --install-extension cake-build.cake-vscode
+
+# Docker
+code-insiders --install-extension PeterJausovec.vscode-docker
 
 exit
 
