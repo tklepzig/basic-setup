@@ -65,13 +65,16 @@ exit
         "*.jsx": "javascriptreact"
     },
     "emmet.showExpandedAbbreviation": "always",
-    "tsimporter.doubleQuotes": true,
     "openSpecFile.suffixMap": {
         ".js": ".spec.js",
         ".spec.js": ".js",
         ".ts": ".spec.ts",
         ".spec.ts": ".ts"
-    }
+    },
+    "typelens.skiplanguages": [
+        "csharp",
+        "dockerfile"
+    ]
 }
 
 # key bindings
@@ -82,13 +85,12 @@ exit
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+i",
-        "command": "-typescriptHero.resolve.addImport",
-        "when": "editorTextFocus"
+        "key": "ctrl+shift+[Period]",
+        "command": "tslint.fixAllProblems"
     },
     {
-        "key": "ctrl+shift+alt+i",
-        "command": "-typescriptHero.resolve.addMissingImports",
+        "key": "ctrl+shift+[Period]",
+        "command": "-extension.refactorix.Semicolons.Remove",
         "when": "editorTextFocus"
     }
 ]
