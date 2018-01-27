@@ -1,8 +1,0 @@
-'body':
-  'ctrl-shift-S': 'window:save-all'
-
-'.platform-win32, .platform-linux':
-  'ctrl-0': 'tree-view:toggle-focus'
-
-'atom-text-editor:not([mini])':
-  'tab': 'emmet:expand-abbreviation-with-tab'
