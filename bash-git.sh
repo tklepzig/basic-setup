@@ -279,4 +279,7 @@ git config --global alias.wtl "worktree list"
 git config --global alias.cp "cherry-pick"
 git config --global alias.cpn "cherry-pick -n"
 
+echo -e "${accent}Configuring vim...${normal}"
+echo "set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab" > ~/.vimrc
+
 echo -e "${accent}Done.${normal}"
