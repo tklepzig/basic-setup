@@ -281,6 +281,6 @@ git config --global alias.cpn "cherry-pick -n"
 
 echo -e "${accent}Configuring vim...${normal}"
 echo "set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab" > ~/.vimrc
-echo ":set number" > ~/.vimrc
+echo "set number" > ~/.vimrc
 
 echo -e "${accent}Done.${normal}"
