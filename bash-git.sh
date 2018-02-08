@@ -206,8 +206,8 @@ echo "git merge --ff-only" >> ~/.git-fetch-merge.sh
 
 echo -e "${accent}Configuring general git settings...${normal}"
 
-logCommon="-c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) %C(cyan)%<(15)%ar%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
-reflogCommon="-c core.pager='less -SRF' reflog --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)(%<(15)%ar)%C(reset) %gs%C(reset))%C(auto)%d%Creset'"
+logCommon="-c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) %C(cyan)%><(15)%ar%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
+reflogCommon="-c core.pager='less -SRF' reflog --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)(%><(15)%ar)%C(reset) %gs%C(reset))%C(auto)%d%Creset'"
 
 
 git config --global credential.helper store
