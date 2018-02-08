@@ -42,7 +42,7 @@ then
     sudo apt-get -y update
 fi
 
-sudo apt-get -y install vim xdotool gparted sshfs tmux
+sudo apt-get -y install vim xdotool gparted sshfs tmux pwgen
 
 #if isUbuntu
 #then
