@@ -4,7 +4,7 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
-sudo apt-get install code-insiders
+sudo apt-get install -y code-insiders
 
 code-insiders --install-extension WallabyJs.quokka-vscode
 code-insiders --install-extension formulahendry.auto-rename-tag
