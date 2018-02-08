@@ -88,6 +88,9 @@ then
     echo "__git_complete \"g lp\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ld\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ls\" _git_log" >> ~/.custom-config
+    
+    echo "__git_complete \"g rl\" _git_reflog" >> ~/.custom-config
+    echo "__git_complete \"g rll\" _git_reflog" >> ~/.custom-config
 
     echo "__git_complete \"g r\" _git_reset" >> ~/.custom-config
     echo "__git_complete \"g rh\" _git_reset" >> ~/.custom-config
