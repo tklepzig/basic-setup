@@ -52,6 +52,9 @@ sudo apt-get -y install vim xdotool gparted sshfs tmux pwgen
 echo -e "${accent}Installing Google Chrome${normal}"
 curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/chrome.sh | bash
 
+echo -e "${accent}Installing Visual Studio Code Insiders${normal}"
+curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/vscode.sh | bash
+
 if $install_development; then
     sudo apt-get -y install git git-gui meld kdiff3 npm nodejs-legacy
 
