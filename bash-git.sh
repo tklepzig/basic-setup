@@ -203,7 +203,9 @@ echo "git merge --ff-only" >> ~/.git-fetch-merge.sh
 
 echo -e "${accent}Configuring general git settings...${normal}"
 
-logCommon="-c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
+logCommon="-c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) %C(cyan)%<(15)%ar%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
+reflogCommon="-c core.pager='less -SRF' reflog --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)(%<(15)%ar)%C(reset) %gs%C(reset))%C(auto)%d%Creset'"
+
 
 git config --global credential.helper store
 git config --global push.default simple
@@ -233,6 +235,8 @@ git config --global alias.ln "$logCommon --name-status"
 git config --global alias.lp "$logCommon -p"
 git config --global alias.ld "$logCommon --date-order"
 git config --global alias.ls "$logCommon --simplify-by-decoration"
+git config --global alias.rl "$reflogCommon -10"
+git config --global alias.rll "$reflogCommon"
 git config --global alias.r "reset"
 git config --global alias.rh "reset --hard"
 git config --global alias.rs "reset --soft"
