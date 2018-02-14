@@ -143,6 +143,9 @@ then
 
     echo "__git_complete \"g cp\" _git_cherry_pick" >> ~/.custom-config
     echo "__git_complete \"g cpn\" _git_cherry_pick" >> ~/.custom-config
+    
+    echo "__git_complete \"g rv\" _git_revert" >> ~/.custom-config
+    echo "__git_complete \"g rvn\" _git_revert" >> ~/.custom-config
 
     echo "__git_complete g __git_main" >> ~/.custom-config
 fi
@@ -289,6 +292,9 @@ git config --global alias.wtl "worktree list"
 
 git config --global alias.cp "cherry-pick"
 git config --global alias.cpn "cherry-pick -n"
+
+git config --global alias.rv "revert"
+git config --global alias.rvn "revert -n"
 
 echo -e "${accent}Configuring vim...${normal}"
 echo "set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab" > ~/.vimrc
