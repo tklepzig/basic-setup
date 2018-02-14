@@ -88,6 +88,8 @@ then
     echo "__git_complete \"g lp\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ld\" _git_log" >> ~/.custom-config
     echo "__git_complete \"g ls\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g lf\" _git_log" >> ~/.custom-config
+    echo "__git_complete \"g lfp\" _git_log" >> ~/.custom-config
     
     echo "__git_complete \"g rl\" _git_reflog" >> ~/.custom-config
     echo "__git_complete \"g rll\" _git_reflog" >> ~/.custom-config
@@ -238,6 +240,8 @@ git config --global alias.ln "$logCommon --name-status"
 git config --global alias.lp "$logCommon -p"
 git config --global alias.ld "$logCommon --date-order"
 git config --global alias.ls "$logCommon --simplify-by-decoration"
+git config --global alias.lf "$logCommon --follow"
+git config --global alias.lfp "$logCommon --follow -p"
 git config --global alias.rl "$reflogCommon -10"
 git config --global alias.rll "$reflogCommon"
 git config --global alias.r "reset"
