@@ -42,6 +42,16 @@ echo "alias sif='~/.search-in-files.sh'" >> ~/.custom-config
 echo "alias hgrep='~/.hgrep.sh'" >> ~/.custom-config
 echo "alias update-my-config='curl -Ls https://raw.githubusercontent.com/tklepzig/basic-setup/master/bash-git.sh|bash'" >> ~/.custom-config
 
+echo "_complete_ssh_hosts ()" >> ~/.custom-config
+echo "{" >> ~/.custom-config
+echo -e "\tCOMPREPLY=()" >> ~/.custom-config
+echo -e "\tcur=\"\${COMP_WORDS[COMP_CWORD]}\"" >> ~/.custom-config
+echo -e "\tcomp_ssh_hosts=\`awk '{split(\$1,aliases,\",\"); if (aliases[1] !~ /^\[/) print aliases[1]}' ~/.ssh/known_hosts ; cat ~/.ssh/config | grep "^Host " | awk '{print \$2}'\`" >> ~/.custom-config
+echo -e "\tCOMPREPLY=( \$(compgen -W \"\${comp_ssh_hosts}\" -- \$cur))" >> ~/.custom-config
+echo -e "\treturn 0" >> ~/.custom-config
+echo "}" >> ~/.custom-config
+echo "complete -F _complete_ssh_hosts ssh" >> ~/.custom-config
+
 if isOS msys
 then
     echo "alias e='explorer .'" >> ~/.custom-config
