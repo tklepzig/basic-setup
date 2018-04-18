@@ -142,6 +142,9 @@ then
 
     echo "__git_complete \"g st\" _git_stash" >> ~/.custom-config
     echo "__git_complete \"g stp\" _git_stash" >> ~/.custom-config
+    echo "__git_complete \"g stl\" _git_stash" >> ~/.custom-config
+    echo "__git_complete \"g sta\" _git_stash" >> ~/.custom-config
+    echo "__git_complete \"g sts\" _git_stash" >> ~/.custom-config
     
     echo "__git_complete \"g t\" _git_tag" >> ~/.custom-config
     echo "__git_complete \"g td\" _git_tag" >> ~/.custom-config
