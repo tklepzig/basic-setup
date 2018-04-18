@@ -222,7 +222,8 @@ echo "git merge --ff-only" >> ~/.git-fetch-merge.sh
 echo -e "${accent}Configuring general git settings...${normal}"
 
 logCommon="-c core.pager='less -SRF' log --graph --all --format='%C(yellow)%h%C(reset) %C(cyan)%><(15)%ar%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset'"
-reflogCommon="-c core.pager='less -SRF' reflog --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)%><(15)%ar%C(reset) %gs%C(reset))%C(auto)%d%Creset'"
+reflogCommon="-c core.pager='less -SRF' reflog --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)%><(15)%ar%C(reset) %gs%C(reset)%C(auto)%d%Creset'"
+stashCommon="-c core.pager='less -SRF' stash list --format='%C(yellow)%h%C(reset) %C(dim yellow)%<(10)%gd%C(reset) %C(cyan)%><(15)%ar%C(reset) %gs%C(reset)'"
 
 
 git config --global credential.helper store
@@ -290,6 +291,9 @@ git config --global alias.sw "show --word-diff --format=\"%C(yellow)%h%C(reset) 
 git config --global alias.swn "show --word-diff --name-status --format=\"%C(yellow)%h%C(reset) - %C(cyan)(%ar)%C(reset) %s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%Creset\""
 git config --global alias.st "stash"
 git config --global alias.stp "stash pop"
+git config --global alias.stl "$stashCommon"
+git config --global alias.sta "stash apply"
+git config --global alias.sts "stash show"
 
 git config --global alias.t "tag"
 git config --global alias.td "tag -d"
