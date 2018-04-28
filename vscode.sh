@@ -20,6 +20,7 @@ code-insiders --install-extension mrmlnc.vscode-scss
 code-insiders --install-extension pflannery.vscode-versionlens
 code-insiders --install-extension qinjia.seti-icons
 code-insiders --install-extension maptz.camelcasenavigation
+code-insiders --install-extension CoenraadS.bracket-pair-colorizer
 
 # Testing
 #code-insiders --install-extension nwhatt.chai-snippets
