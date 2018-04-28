@@ -35,6 +35,11 @@ rm -f ~/.custom-config
 
 #bash general
 echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd; }; __mkcd'" >> ~/.custom-config
+echo "alias ls='ls -F --color=auto'" >> ~/.custom-config
+echo "alias la='ls -A'" >> ~/.custom-config
+echo "alias ll='ls -l'" >> ~/.custom-config
+echo "alias lla='ls -Al'" >> ~/.custom-config
+echo "alias rmr='rm -rf'" >> ~/.custom-config
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
 echo "shopt -s globstar" >> ~/.custom-config
