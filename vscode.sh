@@ -81,7 +81,9 @@ exit
     "typelens.skiplanguages": [
         "csharp",
         "dockerfile"
-    ]
+    ],
+    "npm.enableScriptExplorer": true,
+    "npm.exclude": "**/dist/*"
 }
 
 # key bindings
