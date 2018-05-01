@@ -37,8 +37,8 @@ rm -f ~/.custom-config
 echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd; }; __mkcd'" >> ~/.custom-config
 echo "alias ls='ls -F --color=auto'" >> ~/.custom-config
 echo "alias la='ls -A'" >> ~/.custom-config
-echo "alias ll='ls -l'" >> ~/.custom-config
-echo "alias lla='ls -Al'" >> ~/.custom-config
+echo "alias ll='ls -lh'" >> ~/.custom-config
+echo "alias lla='ls -Ahl'" >> ~/.custom-config
 echo "alias rmr='rm -rf'" >> ~/.custom-config
 echo "export PROMPT_DIRTRIM=4" >> ~/.custom-config
 echo "shopt -s extglob" >> ~/.custom-config
