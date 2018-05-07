@@ -83,7 +83,19 @@ exit
         "dockerfile"
     ],
     "npm.enableScriptExplorer": true,
-    "npm.exclude": "**/dist/*"
+    "npm.exclude": "**/dist/*",
+    "zenMode.centerLayout": false,
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "Gold",
+            "LightSkyBlue",
+            "orange"
+        ],
+        "Red"
+    ]
 }
 
 # key bindings
