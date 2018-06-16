@@ -85,6 +85,7 @@ exit
     "npm.enableScriptExplorer": true,
     "npm.exclude": "**/dist/*",
     "zenMode.centerLayout": false,
+    "gitlens.historyExplorer.enabled": true,
     "bracketPairColorizer.consecutivePairColors": [
         "()",
         "[]",
