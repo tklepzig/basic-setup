@@ -11,7 +11,7 @@ code-insiders --install-extension formulahendry.auto-rename-tag
 code-insiders --install-extension akamud.vscode-javascript-snippet-pack
 code-insiders --install-extension christian-kohler.path-intellisense
 #code-insiders --install-extension donjayamanne.githistory
-code-insiders --install-extension huizhou.githd
+#code-insiders --install-extension huizhou.githd
 code-insiders --install-extension eamodio.gitlens
 code-insiders --install-extension kisstkondoros.typelens
 code-insiders --install-extension michelemelluso.code-beautifier
