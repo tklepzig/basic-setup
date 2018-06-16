@@ -53,6 +53,9 @@ code-insiders --install-extension infeng.vscode-react-typescript
 # Docker
 code-insiders --install-extension PeterJausovec.vscode-docker
 
+# Debugging
+code-insiders --install-extension msjsdiag.debugger-for-chrome
+
 exit
 
 # settings
