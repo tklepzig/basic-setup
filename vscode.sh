@@ -83,7 +83,7 @@ exit
         "dockerfile"
     ],
     "npm.enableScriptExplorer": true,
-    "npm.exclude": "**/dist/*",
+    "npm.exclude": "**/dist",
     "zenMode.centerLayout": false,
     "gitlens.historyExplorer.enabled": true,
     "bracketPairColorizer.consecutivePairColors": [
