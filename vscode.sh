@@ -56,6 +56,9 @@ code-insiders --install-extension PeterJausovec.vscode-docker
 # Debugging
 code-insiders --install-extension msjsdiag.debugger-for-chrome
 
+# npm
+code-insiders --install-extension eg2.vscode-npm-script
+
 exit
 
 # settings
@@ -85,8 +88,7 @@ exit
         "csharp",
         "dockerfile"
     ],
-    "npm.enableScriptExplorer": true,
-    "npm.exclude": "**/dist",
+    "debug.toolBarLocation": "docked",
     "zenMode.centerLayout": false,
     "gitlens.historyExplorer.enabled": true,
     "bracketPairColorizer.consecutivePairColors": [
