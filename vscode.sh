@@ -119,5 +119,13 @@ exit
         "key": "ctrl+shift+[Period]",
         "command": "-extension.refactorix.Semicolons.Remove",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.files.saveAll"
     }
 ]
