@@ -59,6 +59,9 @@ code-insiders --install-extension msjsdiag.debugger-for-chrome
 # npm
 code-insiders --install-extension eg2.vscode-npm-script
 
+# systemd unit files
+code-insiders --install-extension coolbear.systemd-unit-file
+
 exit
 
 # settings
