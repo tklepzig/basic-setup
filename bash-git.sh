@@ -89,6 +89,7 @@ then
    
     echo "__git_complete \"g s\" _git_status" >> ~/.custom-config
     echo "__git_complete \"g si\" _git_status" >> ~/.custom-config
+    echo "__git_complete \"g sa\" _git_status" >> ~/.custom-config
 
     echo "__git_complete \"g dt\" _git_difftool" >> ~/.custom-config
     echo "__git_complete \"g dts\" _git_difftool" >> ~/.custom-config
@@ -250,7 +251,8 @@ git config --global color.status always
 echo -e "${accent}Configuring git aliases...${normal}"
 
 git config --global alias.s  "status -sb"
-git config --global alias.si  "status -sb --ignored"
+git config --global alias.sa "status -sb -uall"
+git config --global alias.si "status -sb --ignored"
 git config --global alias.dt "difftool --dir-diff"
 git config --global alias.dts "difftool --dir-diff --staged"
 git config --global alias.d "diff --word-diff"
