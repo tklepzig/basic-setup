@@ -20,22 +20,35 @@ isProgramInstalled()
     return 0
 }
 
-echo -e "${accent}Configuring .bashrc...${normal}"
 
-if [ ! -f ~/.bashrc ]
+profileFile='.bashrc'
+if isOS darwin
 then
-    touch ~/.bashrc
+    profileFile='.bash_profile'
 fi
 
-if ! grep -q "~/.custom-config" ~/.bashrc
+echo -e "${accent}Configuring ${profileFile}...${normal}"
+
+if [ ! -f ~/$profileFile ]
 then
-    echo "if [ -f ~/.custom-config ]; then . ~/.custom-config; fi" >> ~/.bashrc;
+    touch ~/$profileFile
+fi
+
+if ! grep -q "~/.custom-config" ~/$profileFile
+then
+    echo "if [ -f ~/.custom-config ]; then . ~/.custom-config; fi" >> ~/$profileFile;
 fi
 rm -f ~/.custom-config
 
 #bash general
 echo "alias mkcd='function __mkcd() { mkdir \"\$1\"; cd \"\$1\"; unset -f __mkcd; }; __mkcd'" >> ~/.custom-config
-echo "alias ls='ls -F --color=auto'" >> ~/.custom-config
+
+if isOS darwin
+then
+    echo "alias ls='ls -FG'" >> ~/.custom-config
+else
+    echo "alias ls='ls -F --color=auto'" >> ~/.custom-config
+fi
 echo "alias la='ls -A'" >> ~/.custom-config
 echo "alias ll='ls -lh'" >> ~/.custom-config
 echo "alias lla='ls -Ahl'" >> ~/.custom-config
