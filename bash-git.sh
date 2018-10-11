@@ -139,6 +139,7 @@ then
     echo "__git_complete \"g cma\" _git_commit" >> ~/.custom-config
 
     echo "__git_complete \"g p\" _git_push" >> ~/.custom-config
+    echo "__git_complete \"g pn\" _git_push" >> ~/.custom-config
     #echo "__git_complete \"g pt\" _git_push" >> ~/.custom-config
 
     echo "__git_complete \"g c\" _git_checkout" >> ~/.custom-config
@@ -296,6 +297,7 @@ git config --global alias.cma "commit --amend"
 git config --global alias.acm "!f() { git add --all && git commit -m \"\$1\"; }; f"
 git config --global alias.acmp "!f() { git add --all && git commit -m \"\$1\" && git push --follow-tags; }; f"
 git config --global alias.p "push --follow-tags"
+git config --global alias.pn "!f() { currentBranch=\$(git rev-parse --abbrev-ref HEAD); git push -u \${1:-origin} \$currentBranch; }; f"
 #git config --global alias.pt "push --tags"
 git config --global alias.c "checkout"
 git config --global alias.b "branch"
