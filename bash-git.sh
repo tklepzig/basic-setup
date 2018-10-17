@@ -1,5 +1,9 @@
 #!/bin/bash
 
+curl -Ls https://raw.githubusercontent.com/tklepzig/dotfiles/master/install.sh|bash
+
+exit
+
 accent='\033[1;33m'
 normal='\033[0m'
 
